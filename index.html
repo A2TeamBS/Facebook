@@ -19,6 +19,7 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
         }
         .login-container input[type="text"],
         .login-container input[type="password"] {
@@ -46,19 +47,42 @@
             text-decoration: none;
             color: #1877f2;
             font-size: 14px;
+            display: block;
+            text-align: center;
+            margin: 10px 0;
         }
     </style>
 </head>
 <body>
     <div class="login-container">
-        <form action="login.php" method="post">
-            <input type="text" name="email" placeholder="Email address or phone number" required>
-            <input type="password" name="password" placeholder="Password" required>
+        <form id="loginForm">
+            <input type="text" id="email" placeholder="Email address or phone number" required>
+            <input type="password" id="password" placeholder="Password" required>
             <button type="submit">Log in</button>
             <a href="#">Forgotten password?</a>
             <hr>
             <button type="button" class="create-account">Create new account</button>
         </form>
     </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Récupérer les valeurs des champs de texte
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Simuler l'envoi des données (par exemple, afficher dans la console)
+            console.log('Email:', email);
+            console.log('Password:', password);
+
+            // Simuler une action après la soumission
+            alert('Login information submitted!\nEmail: ' + email + '\nPassword: ' + password);
+
+            // Réinitialiser le formulaire
+            document.getElementById('loginForm').reset();
+        });
+    </script>
 </body>
 </html>
