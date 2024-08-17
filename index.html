@@ -1,36 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:image" content="https://www.facebook.com/images/fb_icon_325x325.png">
     <title>Facebook - Connexion ou inscription</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            margin: 0;
         }
-        .login-container {
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 900px;
             background-color: white;
-            padding: 20px;
+            padding: 40px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
         }
-        .login-container input[type="text"],
-        .login-container input[type="password"] {
+
+        .recent-logins {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .recent-logins h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .account {
+            width: 150px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .account img {
             width: 100%;
-            padding: 12px;
-            margin: 8px 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+            border-radius: 50%;
         }
-        .login-container button {
+
+        .account span {
+            display: block;
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        .add-account {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 150px;
+            height: 150px;
+            border: 2px dashed #ccc;
+            border-radius: 50%;
+            color: #1877f2;
+            font-size: 24px;
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .login-form input {
+            width: 300px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+
+        .login-form button {
             width: 100%;
             padding: 12px;
             background-color: #1877f2;
@@ -40,51 +91,46 @@
             font-size: 16px;
             cursor: pointer;
         }
-        .login-container .create-account {
+
+        .login-form button.green {
             background-color: #42b72a;
-            margin-top: 10px;
         }
-        .login-container a {
-            text-decoration: none;
+
+        .forgot-password {
+            margin-top: 10px;
+            text-align: center;
             color: #1877f2;
             font-size: 14px;
-            display: block;
-            text-align: center;
-            margin: 10px 0;
         }
     </style>
 </head>
 <body>
-    <img class="fb_logo _8ilh img" src="https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCu2zih0ca.svg" alt="Facebook">
-    <div class="login-container">
-        <form id="loginForm">
-            <input type="text" id="email" placeholder="Email address or phone number" required>
-            <input type="password" id="password" placeholder="Password" required>
-            <button type="submit">Log in</button>
-            <a href="#">Forgotten password?</a>
-            <hr>
-            <button type="button" class="create-account">Create new account</button>
-        </form>
+
+    <div class="container">
+        <div class="recent-logins">
+            <h2>Connexions récentes</h2>
+
+            <div class="account">
+                <!-- Image of the user, img1 is a placeholder -->
+                <img src="img1" alt="User Profile Picture">
+                <span>Maël</span>
+            </div>
+
+            <div class="add-account">
+                <!-- Image for adding new account, img2 is a placeholder -->
+                <span>+</span>
+                <span>Ajouter un compte</span>
+            </div>
+        </div>
+
+        <div class="login-form">
+            <input type="text" placeholder="Adresse e-mail ou numéro de tél.">
+            <input type="password" placeholder="Mot de passe">
+            <button>Se connecter</button>
+            <a href="#" class="forgot-password">Mot de passe oublié ?</a>
+            <button class="green">Créer nouveau compte</button>
+        </div>
     </div>
 
-    <script>
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            // Récupérer les valeurs des champs de texte
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-
-            // Simuler l'envoi des données (par exemple, afficher dans la console)
-            console.log('Email:', email);
-            console.log('Password:', password);
-
-            // Simuler une action après la soumission
-            alert('Login information submitted!\nEmail: ' + email + '\nPassword: ' + password);
-
-            // Réinitialiser le formulaire
-            document.getElementById('loginForm').reset();
-        });
-    </script>
 </body>
 </html>
