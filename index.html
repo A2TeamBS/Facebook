@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Facebook - Connexion ou inscription</title>
+    <title>Facebook Login</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: Helvetica, Arial, sans-serif;
             background-color: #f0f2f5;
             margin: 0;
             padding: 0;
@@ -19,22 +19,22 @@
         .container {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            width: 900px;
-            background-color: white;
-            padding: 40px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+            align-items: flex-start;
+            width: 1000px;
+            background-color: transparent;
         }
 
         .recent-logins {
             display: flex;
             flex-direction: column;
             align-items: center;
+            width: 320px;
         }
 
         .recent-logins h2 {
             font-size: 24px;
+            color: #1c1e21;
+            font-weight: 400;
             margin-bottom: 20px;
         }
 
@@ -42,6 +42,7 @@
             width: 150px;
             text-align: center;
             margin-bottom: 20px;
+            position: relative;
         }
 
         .account img {
@@ -49,10 +50,27 @@
             border-radius: 50%;
         }
 
+        .account .notification {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: #f02849;
+            color: white;
+            font-size: 12px;
+            padding: 5px;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
         .account span {
             display: block;
             margin-top: 10px;
-            font-size: 18px;
+            font-size: 16px;
+            color: #4b4f56;
         }
 
         .add-account {
@@ -66,34 +84,43 @@
             border-radius: 50%;
             color: #1877f2;
             font-size: 24px;
+            cursor: pointer;
         }
 
         .login-form {
             display: flex;
             flex-direction: column;
+            align-items: center;
+            background-color: white;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
         }
 
         .login-form input {
-            width: 300px;
-            padding: 10px;
-            margin-bottom: 10px;
-            border-radius: 4px;
-            border: 1px solid #ddd;
+            width: 320px;
+            padding: 14px;
+            margin-bottom: 12px;
+            border-radius: 6px;
+            border: 1px solid #dddfe2;
+            font-size: 16px;
         }
 
         .login-form button {
             width: 100%;
-            padding: 12px;
+            padding: 14px;
             background-color: #1877f2;
             color: white;
             border: none;
-            border-radius: 4px;
-            font-size: 16px;
+            border-radius: 6px;
+            font-size: 18px;
+            font-weight: bold;
             cursor: pointer;
         }
 
         .login-form button.green {
             background-color: #42b72a;
+            margin-top: 20px;
         }
 
         .forgot-password {
@@ -102,6 +129,23 @@
             color: #1877f2;
             font-size: 14px;
         }
+
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 20px 0;
+            background-color: #f0f2f5;
+            text-align: center;
+        }
+
+        .footer a {
+            color: #385898;
+            font-size: 12px;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
     </style>
 </head>
 <body>
@@ -114,10 +158,11 @@
                 <!-- Image of the user, img1 is a placeholder -->
                 <img src="img1" alt="User Profile Picture">
                 <span>Maël</span>
+                <div class="notification">11</div>
             </div>
 
             <div class="add-account">
-                <!-- Image for adding new account, img2 is a placeholder -->
+                <!-- Placeholder for add account button -->
                 <span>+</span>
                 <span>Ajouter un compte</span>
             </div>
@@ -130,6 +175,14 @@
             <a href="#" class="forgot-password">Mot de passe oublié ?</a>
             <button class="green">Créer nouveau compte</button>
         </div>
+    </div>
+
+    <div class="footer">
+        <a href="#">S'inscrire</a>
+        <a href="#">Se connecter</a>
+        <a href="#">Messenger</a>
+        <a href="#">Facebook Lite</a>
+        <!-- Add more footer links as needed -->
     </div>
 
 </body>
